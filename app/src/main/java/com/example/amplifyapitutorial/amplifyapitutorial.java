@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.amplifyframework.AmplifyException;
+import com.amplifyframework.api.aws.AWSApiPlugin;
 import com.amplifyframework.core.Amplify;
 
 public class amplifyapitutorial extends Application {
@@ -12,6 +13,8 @@ public class amplifyapitutorial extends Application {
         super.onCreate();
 
         try {
+            //add AWS API plug in
+            Amplify.addPlugin(new AWSApiPlugin());
             Amplify.configure(getApplicationContext());
 
             Log.i("MyAmplifyApp", "Initialized Amplify");
